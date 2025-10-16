@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
@@ -13,9 +14,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.res.painterResource
+import com.example.mymovieapp.R
 import com.example.mymovieapp.ui.theme.MyMovieAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -57,7 +61,7 @@ fun MainActivityScreen(onNavigate: () -> Unit) {
             modifier = Modifier.padding(bottom = 32.dp)
         )
 
-        // Movie button with emoji
+        // Movie button with image
         Box(
             modifier = Modifier
                 .size(120.dp)
@@ -69,10 +73,11 @@ fun MainActivityScreen(onNavigate: () -> Unit) {
                 .padding(8.dp),
             contentAlignment = Alignment.Center
         ) {
-            Text(
-                text = "🎬",
-                fontSize = 60.sp,
-                modifier = Modifier.clickable { onNavigate() }
+            Image(
+                painter = painterResource(id = R.drawable.movie_collection),
+                contentDescription = "Start",
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Fit
             )
         }
 
