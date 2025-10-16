@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     MainActivityScreen(
                         onNavigate = {
                             val intent = Intent(this@MainActivity, MovieEntryActivity::class.java)
-                            //startActivity(intent)
+                            startActivity(intent)
                         }
                     )
                 }
