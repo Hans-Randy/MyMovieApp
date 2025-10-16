@@ -1,0 +1,25 @@
+# Gradle files
+.gradle/
+build/
+*.apk
+*.aar
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+*.apk
+local.properties
+
+# The following line is provided to you to ignore files you create and don't want to track on git.
+local.properties
+
+# Generated Kotlin files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
