@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -14,8 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -30,10 +27,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainActivityScreen {
-                        val intent = Intent(this@MainActivity, MovieEntryActivity::class.java)
-                        startActivity(intent)
-                    }
+                    MainActivityScreen(
+                        onNavigate = {
+                            val intent = Intent(this@MainActivity, MovieEntryActivity::class.java)
+                            //startActivity(intent)
+                        }
+                    )
                 }
             }
         }
@@ -58,7 +57,7 @@ fun MainActivityScreen(onNavigate: () -> Unit) {
             modifier = Modifier.padding(bottom = 32.dp)
         )
 
-        // Image button - using placeholder
+        // Movie button with emoji
         Box(
             modifier = Modifier
                 .size(120.dp)
